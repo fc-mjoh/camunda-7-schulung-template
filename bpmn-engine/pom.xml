@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.mjoh.operaton</groupId>
+        <artifactId>operaton-template</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>engine</artifactId>
+    <packaging>jar</packaging>
+
+    <name>BPMN Engine</name>
+    <description>Engine</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.operaton.bpm.springboot</groupId>
+            <artifactId>operaton-bpm-spring-boot-starter-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.operaton.bpm.springboot</groupId>
+            <artifactId>operaton-bpm-spring-boot-starter-webapp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.operaton.bpm.springboot</groupId>
+            <artifactId>operaton-bpm-spring-boot-starter-external-task-client</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.operaton.bpm</groupId>
+            <artifactId>operaton-engine-plugin-spin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.operaton.spin</groupId>
+            <artifactId>operaton-spin-dataformat-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+    </dependencies>
+</project>

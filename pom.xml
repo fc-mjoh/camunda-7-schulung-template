@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-        <!-- Child modules will be listed here -->
+        <module>bpmn-engine</module>
     </modules>
 
     <dependencyManagement>
