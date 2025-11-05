@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "label": "Preisanzeige",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0z64wwm",
+        "columns": null
+      },
+      "id": "Field_0wewkx6",
+      "key": "textfield_cqpam8",
+      "defaultValue": "price",
+      "readonly": true
+    },
+    {
+      "label": "Bestellen?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0gqnxg2",
+        "columns": null
+      },
+      "id": "Field_1fh4yh4",
+      "key": "shouldOrder"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0m5jmuj",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.40.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.24.0",
+  "schemaVersion": 19
+}
