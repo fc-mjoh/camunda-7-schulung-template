@@ -47,9 +47,10 @@
     <bpmn:sequenceFlow id="Flow_1ywpn0a" sourceRef="Activity_1lp6vbj" targetRef="Event_0nc3lts" />
     <bpmn:boundaryEvent id="Event_1n9gvta" attachedToRef="Activity_1t3y9dy">
       <bpmn:outgoing>Flow_1puwr86</bpmn:outgoing>
-      <bpmn:errorEventDefinition id="ErrorEventDefinition_1fy411j" camunda:errorCodeVariable="noCoffeeError" />
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_1fy411j" errorRef="Error_1ecm4e6" camunda:errorCodeVariable="noCoffeeError" />
     </bpmn:boundaryEvent>
   </bpmn:process>
+  <bpmn:error id="Error_1ecm4e6" name="Error_newCoffeeError" errorCode="newCoffeeError" camunda:errorMessage="" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="order-process">
       <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
@@ -87,13 +88,13 @@
         <di:waypoint x="218" y="240" />
         <di:waypoint x="270" y="240" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1toxw9o_di" bpmnElement="Flow_1toxw9o">
-        <di:waypoint x="370" y="240" />
-        <di:waypoint x="565" y="240" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0qffw8n_di" bpmnElement="Flow_0qffw8n">
         <di:waypoint x="910" y="240" />
         <di:waypoint x="1082" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1toxw9o_di" bpmnElement="Flow_1toxw9o">
+        <di:waypoint x="370" y="240" />
+        <di:waypoint x="565" y="240" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_09bn7an_di" bpmnElement="Flow_09bn7an">
         <di:waypoint x="615" y="240" />
