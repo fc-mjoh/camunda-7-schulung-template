@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1qkyyw1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.27.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.23.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1qkyyw1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.40.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.23.0">
   <bpmn:process id="order-process" name="Test" isExecutable="true" camunda:historyTimeToLive="1">
     <bpmn:extensionElements />
     <bpmn:startEvent id="StartEvent_1">
@@ -10,7 +10,7 @@
       <bpmn:incoming>Flow_0qffw8n</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_1toxw9o" sourceRef="Activity_1t3y9dy" targetRef="Activity_0z1y4ci" />
-    <bpmn:serviceTask id="Activity_1t3y9dy" name="test" camunda:asyncBefore="true" camunda:delegateExpression="${coffeeDelegate}">
+    <bpmn:serviceTask id="Activity_1t3y9dy" name="test" camunda:asyncBefore="true" camunda:type="external" camunda:topic="coffee">
       <bpmn:incoming>Flow_1ey7d2d</bpmn:incoming>
       <bpmn:outgoing>Flow_1toxw9o</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -25,11 +25,11 @@
       <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
         <dc:Bounds x="182" y="82" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0cxdud9_di" bpmnElement="Activity_1t3y9dy">
-        <dc:Bounds x="270" y="60" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0upa0vv_di" bpmnElement="Event_0upa0vv">
         <dc:Bounds x="652" y="82" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0cxdud9_di" bpmnElement="Activity_1t3y9dy">
+        <dc:Bounds x="270" y="60" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_07xrbtz_di" bpmnElement="Activity_0z1y4ci">
         <dc:Bounds x="440" y="60" width="100" height="80" />
