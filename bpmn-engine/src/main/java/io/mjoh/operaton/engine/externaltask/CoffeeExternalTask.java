@@ -4,6 +4,7 @@ import org.operaton.bpm.client.spring.annotation.ExternalTaskSubscription;
 import org.operaton.bpm.client.task.ExternalTask;
 import org.operaton.bpm.client.task.ExternalTaskHandler;
 import org.operaton.bpm.client.task.ExternalTaskService;
+import org.operaton.bpm.engine.delegate.BpmnError;
 import org.operaton.spin.Spin;
 import org.operaton.spin.json.SpinJsonNode;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,11 @@ public class CoffeeExternalTask implements ExternalTaskHandler {
         String type = spinJsonNode.prop("type").stringValue();
         Number price = spinJsonNode.prop("price").numberValue();
         String stock = spinJsonNode.prop("inStock").stringValue();
+
+        if (!stock.equals("in stock")) {
+            externalTaskService.handleBpmnError(externalTask, "newCoffeeError", "no coffee");
+            return;
+        }
 
         externalTaskService.setVariables(externalTask, Map.of("type", type, "price", price, "inStock", stock));
 
