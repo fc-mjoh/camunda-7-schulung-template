@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_13wog3b" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.40.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.24.0">
+  <description></description>
+  <decision id="Decision_1bgeh0k" name="Decision 1" camunda:historyTimeToLive="1">
+    <decisionTable id="DecisionTable_1813z0r">
+      <input id="Input_1" camunda:inputVariable="resturlaub">
+        <inputExpression id="InputExpression_1" typeRef="long" expressionLanguage="feel">
+          <text>resturlaub</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0xkojk9" camunda:inputVariable="wunsch">
+        <inputExpression id="LiteralExpression_1kc5rei" typeRef="long">
+          <text>wunsch</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ywuz0k" camunda:inputVariable="abwesenheit">
+        <inputExpression id="LiteralExpression_1ipvhkd" typeRef="long">
+          <text>abwesenheit</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="genehmigt" typeRef="boolean" />
+      <rule id="DecisionRule_0mj56l6">
+        <description>Gibt an, ob der Urlaubsantrag genehmigt wurde</description>
+        <inputEntry id="UnaryTests_035lm7c">
+          <text> &gt;= wunsch</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ojvdgq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ctx0kj">
+          <text>&lt; 2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18ff51c">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19hmc40">
+        <inputEntry id="UnaryTests_0hauhpc">
+          <text>&lt; wunsch</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vdsav7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pywtce">
+          <text>&lt; 2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0de9wcl">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yr7019">
+        <inputEntry id="UnaryTests_1rih2ik">
+          <text>&gt;= wunsch</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pjjyul">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u5vo4f">
+          <text>&gt; 2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wgmqxw">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_165xn01">
+        <inputEntry id="UnaryTests_16fzbl9">
+          <text>&lt; wunsch</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nu5k2j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ncvm4z">
+          <text>&gt; 2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1etkafh">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_1bgeh0k">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
