@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="versicherungDecisionModel" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.40.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.24.0">
+  <decision id="versicherungDecision" name="Decision 1" camunda:historyTimeToLive="1">
+    <informationRequirement id="InformationRequirement_1u4bo9t">
+      <requiredInput href="#InputData_0u7utaj" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1uqtvel" hitPolicy="FIRST">
+      <input id="Input_1" camunda:inputVariable="payload.sparte">
+        <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="feel">
+          <text>sparte</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="genericSparte" typeRef="string" />
+      <rule id="DecisionRule_0roevoh">
+        <inputEntry id="UnaryTests_0apdjvk">
+          <text>"kv", "020", "kranken"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kawy5f">
+          <text>"kv"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cz7aag">
+        <inputEntry id="UnaryTests_1m1c2wm">
+          <text>"lv", "010", "leben"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uqe0db">
+          <text>"lv"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m7yfbv">
+        <inputEntry id="UnaryTests_1nh1n3j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eynb5c">
+          <text>"dok"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0u7utaj" name="Sparte" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="versicherungDecision">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1ahytjq" dmnElementRef="InputData_0u7utaj">
+        <dc:Bounds height="45" width="125" x="187" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1qa85mt" dmnElementRef="InformationRequirement_1u4bo9t">
+        <di:waypoint x="250" y="337" />
+        <di:waypoint x="250" y="200" />
+        <di:waypoint x="250" y="180" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
